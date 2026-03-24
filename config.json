@@ -1,0 +1,6 @@
+{
+  "context": "git@github.com:nicolasse/ctx-context.git",
+  "repos": [
+    "git@github.com:nicolasse/ctx.git"
+  ]
+}
