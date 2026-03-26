@@ -60,6 +60,7 @@ Single file: `_ctx/config.json`
 
 ## Recent Changes
 
+- 2026-03-25: Added `_ctx/README.md` creation to init and export skills
 - 2026-03-25: Renamed `context/` directory references to `_ctx/` across all skills and docs
 - 2026-03-24: Simplified repos schema from `{ name, url }` objects to plain URL strings
 - 2026-03-24: Initial implementation mapping
