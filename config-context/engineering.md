@@ -2,7 +2,7 @@
 
 ## Architecture
 
-Single JSON file (`context/config.json`) read and written by two ctx skills. No services, no runtime — the LLM executes git commands directly based on declarative SKILL.md instructions.
+Single JSON file (`_ctx/config.json`) read and written by two ctx skills. No services, no runtime — the LLM executes git commands directly based on declarative SKILL.md instructions.
 
 ## Key Interfaces
 
@@ -24,7 +24,7 @@ Changing this schema breaks both skills.
 
 - Each URL in `repos` must be a valid git clone URL — no validation is performed, failures surface at clone time
 - Directory name is derived from the URL (last path segment, minus `.git`) — not stored explicitly
-- `context/` directory is never treated as a repo — always excluded from scans
+- `_ctx/` directory is never treated as a repo — always excluded from scans
 - Export is destructive to the repos array — it's a full replacement, not a merge
 
 ## Patterns

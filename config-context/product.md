@@ -1,6 +1,6 @@
 # Config Context
 
-Workspace distribution file (`context/config.json`) that lets developers share and recreate multi-repo workspaces. Generated from the local filesystem, consumed to clone repos elsewhere.
+Workspace distribution file (`_ctx/config.json`) that lets developers share and recreate multi-repo workspaces. Generated from the local filesystem, consumed to clone repos elsewhere.
 
 ## Use Cases
 

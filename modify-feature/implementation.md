@@ -16,7 +16,7 @@ Initial implementation. One skill and one agent, following the same patterns as 
 ### UC-001: Modify existing behavior
 
 1. User runs `/ctx:modify-feature` and describes the change
-2. [skill] Resolves feature name from `context/` directories
+2. [skill] Resolves feature name from `_ctx/` directories
 3. [skill] Loads product.md + engineering.md + implementation.md
 4. [skill] Clarifies change with user (2-3 questions max)
 5. [skill → feature-modifier agent] Spawns agent with change description + all three context files
@@ -42,4 +42,5 @@ No data model. All state lives in context markdown files.
 
 ## Recent Changes
 
+- 2026-03-25: Renamed `context/` directory references to `_ctx/` across all skills and docs
 - 2026-03-24: Initial implementation

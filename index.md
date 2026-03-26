@@ -8,7 +8,7 @@
 ## 1. Domain Glossary
 
 ### Workspace
-- **What it is**: A directory containing one or more git repos and a `context/` directory for feature documentation
+- **What it is**: A directory containing one or more git repos and a `_ctx/` directory for feature documentation
 - **Possible states**: Not initialized, initialized (has WORKSPACE.md), indexed (has index.md)
 - **Where it lives**: Filesystem root directory
 - **Consumed by**: All skills (discovery), agents (exploration scope)
@@ -16,13 +16,13 @@
 ### Feature
 - **What it is**: A product capability that spans one or more repos, documented by three context files
 - **Possible states**: Unmapped (exists in code only), partially mapped, fully mapped (all three context files)
-- **Where it lives**: `context/{feature-name}/` (product.md, engineering.md, implementation.md)
+- **Where it lives**: `_ctx/{feature-name}/` (product.md, engineering.md, implementation.md)
 - **Consumed by**: Mapping skills, contract-reviewer agent, feature-implementer agent
 
 ### Context Files
 - **What it is**: A triplet of markdown documents (product, engineering, implementation) defining a feature's contracts
 - **Possible states**: Template, draft, reviewed
-- **Where it lives**: `context/{feature-name}/`
+- **Where it lives**: `_ctx/{feature-name}/`
 - **Consumed by**: Skills (read before implementing), agents (validation and implementation guidance)
 
 ### Skill
@@ -78,7 +78,7 @@
 - **Trigger**: User runs `/ctx:init`
 - **Steps**:
   1. [init] Ask user for project name, rename workspace directory
-  2. [init] Create `context/` structure (CLAUDE.md, templates), init git
+  2. [init] Create `_ctx/` structure (CLAUDE.md, templates), init git
   3. [init] Discover repos (list directories with `.git`)
   4. [init → Explore agent] Deep scan each repo (tech stack, entry points, communication)
   5. [init] Identify features spanning repos, generate WORKSPACE.md
@@ -126,7 +126,7 @@
 - **Steps (export)**:
   1. [export] Scan repos, read git remote URLs
   2. [export] Ask user for context repo GitHub URL
-  3. [export] Write `context/config.json`
+  3. [export] Write `_ctx/config.json`
 - **Steps (pull-repos)**:
   1. [pull-repos] Read config.json, clone missing repos
 - **Repos involved**: All workspace repos
@@ -141,7 +141,7 @@
 | Skills | Explore agent | Agent spawn | Deep repo scanning |
 | `add-feature` | feature-implementer agent | Agent spawn | Code implementation |
 | `add-feature`, `add-use-case` | contract-reviewer agent | Agent spawn | Contract validation |
-| All skills | `context/` filesystem | File read/write | Context file management |
+| All skills | `_ctx/` filesystem | File read/write | Context file management |
 | `pull-repos` | GitHub | git clone | Repo cloning from config.json |
 
 ---

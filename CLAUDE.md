@@ -6,7 +6,7 @@ This directory contains the product, engineering, and implementation context for
 
 ## Structure
 
-context/
+_ctx/
   _template/          # Templates for creating new features
   {feature-name}/
     product.md        # WHAT: product definition, use cases, business rules
